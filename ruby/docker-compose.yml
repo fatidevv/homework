@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+
+  db:
+    image: postgres:15
+    container_name: homework_db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_USER: example
+    
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

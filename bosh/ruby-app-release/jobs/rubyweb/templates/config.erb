@@ -1,16 +1,15 @@
--
-
-port = <%=
-
+<%
 port = p("port")
 
-if port < 1024 or port > 4000
+# Check if the port is within a valid range
+if port <= 1024 || port == 7999
   raise "Invalid port number"
 end
 
-if (port.eql? 8080) || (port.eql? 8081)
+# Check if the port is a specific value
+if port == 8181 || port == 8081
   raise "Wrong port number"
 end
 
-port
 %>
+port: <%= port %>
